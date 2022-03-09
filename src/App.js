@@ -11,7 +11,7 @@ const testTable = () => {
   <table>
     <tr>
       <th>Name</th>
-      <th>Age</th>
+      <th>age</th>
       <th>Gender</th>
     </tr>
     {data.map((val, key) => {
