@@ -1,4 +1,4 @@
-GEO MVP APP
+# GEO MVP APP
 
 Steps to make the website running on your local repo:
 
