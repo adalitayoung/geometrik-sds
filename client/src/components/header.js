@@ -12,7 +12,7 @@ export default function Header() {
     const [role, setRole] = useState("Supplier")
     return (
         <div className='header'>
-            {loggedIn ? (
+            {!loggedIn ? (
                 <div style={{"justifyContent":"center"}}>
                     <div className="logo">
                         <span>Gmetrik</span>
