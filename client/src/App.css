@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+:root {
+  background-color: rgba(242, 242, 242, 1);
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  background-color: var(--light);
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 90px;
+  background-color: rgba(105, 49, 148, 1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header .logo {
   color: white;
+  font-size: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
 }
 
-.App-link {
-  color: #61dafb;
+.header .smallLogo {
+  color: white;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  width: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header > div {
+  display: flex;
+  height: inherit;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.menuOptions {
+  display: flex;
+  width: 60%;
+  color: white;
+  justify-content: flex-start;
+  text-transform: uppercase;
+}
+
+.menuOptions > div {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+}
+
+h5 {
+  margin-left: 4px;
+}
+
+.account {
+  width: 20%;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
+}
+
+.account > div {
+  display: flex;
+  align-items: center;
+}
+
+.layoutChildren {
+  margin-top: 170px; /* Ensure this matches header height with room */
+  overflow: hidden;
+  margin-left: 5%;
+  margin-right: 5%;
 }
