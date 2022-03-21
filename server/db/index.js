@@ -1,17 +1,26 @@
-const dbName = 'postgres'; 
-var url = process.env.DB_URL
+const { Client } = require("pg");
+require("dotenv").config();
 
 var _db;
+const pgClient = new Client({
+  host: process.env.DB_URL,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+});
 
 module.exports = {
-    connectToServer: function( callback ) {
-        // MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client){
-        //     _db  = client.db(dbName);
-        //     return callback( err );
-        // });
-    },
-    
-    getDb: function() {
-        return _db;
-    }
-}
+  connectToServer: async function (callback) {
+    pgClient.connect(function (err) {
+      return callback(err);
+    });
+
+    console.log("PostgreSQL database connected");
+    _db = pgClient;
+  },
+
+  getDb: function () {
+    return _db;
+  },
+};
