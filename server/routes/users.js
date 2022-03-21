@@ -8,9 +8,11 @@ const pgClient = db.getDb();
 router.get("/", function (req, res, next) {
   pgClient.query('SELECT * FROM "User"', function (err, results) {
     if (err) {
-      console.log(err.message);
+      res.status(500).json(err);
+    } else {
+      res.status(200).json(results.rows);
     }
-    res.status(200).json(results.rows);
+    
   });
 });
 
