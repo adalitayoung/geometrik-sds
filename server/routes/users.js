@@ -16,4 +16,30 @@ router.get("/", function (req, res, next) {
   });
 });
 
+// POST a new user (i.e. Create/Register a user).
+router.post("/", function (req, res, next) {
+  const { firstName, lastName, email, password, role, designProgram, position, yearsOfExperience } = req.body;
+  pgClient.query(
+    'INSERT INTO "User" ("firstName", "lastName", email, password, role, "designProgram", "position", "yearsOfExperience") ' +
+      "VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
+    [
+      firstName,
+      lastName,
+      email,
+      password,
+      role,
+      designProgram === "" ? null : designProgram,
+      position === "" ? null : position,
+      yearsOfExperience === "" ? null : yearsOfExperience,
+    ],
+    function (err, results) {
+      if (err) {
+        res.status(500).send(err.message);
+      } else {
+        res.status(201).send("User registered!");
+      }
+    }
+  );
+});
+
 module.exports = router;
