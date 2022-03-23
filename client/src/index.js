@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import ClientRoutes from './routes';
 
 ReactDOM.render(
-  <HashRouter>
+  <BrowserRouter>
     <ClientRoutes />
-  </HashRouter>, 
+  </BrowserRouter>, 
   document.getElementById('root')
 );
 

@@ -74,3 +74,72 @@ h5 {
   margin-left: 5%;
   margin-right: 5%;
 }
+.body{
+  margin: 30px;
+}
+.register-container{
+  max-width: 700px;
+  width: 100%;
+  padding: 20px;
+}
+.register-container .title{
+  font-size: 30px;
+  font-weight: 500;
+}
+.register-container form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0px 12px 0px;
+}
+form .user-details .input{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+.user-details .input .details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.user-details .input input, .user-details .input select{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+}
+.user-details .input input[type="radio"]{
+  height: 20px;
+}
+.user-details .input input:focus, .user-details .input select:focus{
+  border: 2px solid rgba(105, 49, 148, 1);
+}
+form .input-radio .radio-details{
+  display: block;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+form .input-radio .details{
+  display: flex;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+form .register-button{
+  height:40px;
+  width: 120px;
+}
+form .register-button input{
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 700;
+  color:rgba(105, 49, 148, 1);
+  border: 2px solid orange;
+}
+form .register-button input:hover{
+  background-color: #fff
+}
