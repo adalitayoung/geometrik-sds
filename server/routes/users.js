@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require("express");
 const db = require("../db");
 
 var router = express.Router();
@@ -12,7 +12,6 @@ router.get("/", function (req, res, next) {
     } else {
       res.status(200).json(results.rows);
     }
-    
   });
 });
 
