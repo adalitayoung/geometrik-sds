@@ -43,6 +43,7 @@
   color: white;
   justify-content: flex-start;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .menuOptions > div {
@@ -61,21 +62,18 @@ h5 {
   display: flex;
   justify-content: flex-end;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .account > div {
   display: flex;
   align-items: center;
 }
-
 .layoutChildren {
   margin-top: 170px; /* Ensure this matches header height with room */
   overflow: hidden;
   margin-left: 5%;
   margin-right: 5%;
-}
-.body{
-  margin: 30px;
 }
 .register-container{
   max-width: 700px;
@@ -101,7 +99,23 @@ form .user-details .input{
   font-weight: 500;
   margin-bottom: 8px;
 }
-
+.input-select .details{
+  display: block;
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+.input-select select{
+  height: 45px;
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+}
+.input-select select:focus{
+  border: 2px solid rgba(105, 49, 148, 1);
+}
 .user-details .input input, .user-details .input select{
   height: 45px;
   width: 100%;
@@ -142,4 +156,7 @@ form .register-button input{
 }
 form .register-button input:hover{
   background-color: #fff
+}
+form .radio-details{
+  margin-top: 10px;
 }
