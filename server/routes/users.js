@@ -20,15 +20,15 @@ router.get("/", function (req, res, next) {
 
 // POST a new user (i.e. Create/Register a user).
 router.post("/", function (req, res, next) {
+  const { name, email, password, role, is_active, discipline, position } = req.body;
   // Verify that the email has not already been registered
-  pgClient.query('SELECT EXISTS (SELECT 1 FROM "User" WHERE email=$1)', [req.body.email], function (err, results) {
+  pgClient.query('SELECT EXISTS (SELECT 1 FROM "User" WHERE email=$1)', [email], function (err, results) {
     if (err) {
       res.status(500).send(err.message);
     } else if (results.rows[0].exists) {
       res.status(400).send("User email already exists");
     } else {
       // Add user to Supplier or Designer table based on their role
-      const { name, email, password, role, is_active, discipline, position } = req.body;
       if (role === SUPPLIER) {
         pgClient.query(
           'INSERT INTO "Supplier" (name, email, password, role, is_active, discipline, position, is_approved) ' +
