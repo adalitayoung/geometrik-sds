@@ -3,6 +3,8 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import AccountTreeOutlinedIcon from '@material-ui/icons/AccountTreeOutlined';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
+
+
 export default function Header() {
 
     // Change this to toggle between logged in and logged out
@@ -23,7 +25,7 @@ export default function Header() {
                     <div className="smallLogo">
                         <span>Gmetrik</span>
                     </div>
-                    {role == "Supplier" ? (
+                    {role === "Supplier" ? (
                         <div className="menuOptions">
                             <div>
                                 <HomeOutlinedIcon />
@@ -33,9 +35,8 @@ export default function Header() {
                                 <AccountTreeOutlinedIcon />
                                 <h5>Projects</h5>
                             </div>
-                            
                         </div>
-                    ): role == "Designer" ? (
+                    ): role === "Designer" ? (
                         <div className="menuOptions">
                             <h5>Dashboard</h5>
                             <div>

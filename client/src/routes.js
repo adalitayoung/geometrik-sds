@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
+import Register from './pages/register';
 import Layout from './components/layout';
 
 /**
@@ -10,8 +11,10 @@ function ClientRoutes() {
     return (
         <Layout>
             <Routes>
+                <Route path="/register" element={<Register />} />
                 <Route path="/" element={<App />} />
             </Routes>
+          
         </Layout>
         
     ) 
